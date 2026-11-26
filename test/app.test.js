@@ -23,5 +23,5 @@ test("home page returns Hello World", async function() {
 test("add route adds two numbers", async function() {
     const res = await fetch(baseUrl + "/add/2/3");
     const data = await res.json();
-    assert.strictEqual(data.result, 6);
+    assert.strictEqual(data.result, 5);
 });
