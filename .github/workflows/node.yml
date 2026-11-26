@@ -1,0 +1,22 @@
+name: Node.js CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone the code
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build (install dependencies)
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
